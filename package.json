@@ -1,0 +1,51 @@
+{
+  "name": "dot",
+  "version": "0.1.0",
+  "description": "A tiny open-source desktop pixel cat for macOS.",
+  "main": "main.js",
+  "type": "commonjs",
+  "license": "MIT",
+  "author": "Anshumaan657",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anshumaan657/Dot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anshumaan657/Dot/issues"
+  },
+  "homepage": "https://github.com/Anshumaan657/Dot#readme",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "check": "node --check main.js && node --check preload.js && node --check renderer/pet.js && node --check scripts/after-pack.js && node scripts/check-brand.js",
+    "make:mac": "electron-builder --mac dir",
+    "dist": "electron-builder --mac dmg zip",
+    "icon": "python3 scripts/generate-icon.py"
+  },
+  "build": {
+    "appId": "app.dot.desktop",
+    "productName": "Dot",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "afterPack": "scripts/after-pack.js",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.png",
+      "identity": null,
+      "target": [
+        "dir"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^43.1.0",
+    "electron-builder": "^26.0.0"
+  }
+}

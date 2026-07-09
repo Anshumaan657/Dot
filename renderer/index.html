@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main id="app" class="app">
+      <div id="speech" class="speech" hidden></div>
+
+      <section id="petStage" class="pet-stage" aria-label="Dot cat">
+        <canvas id="petCanvas" width="112" height="112"></canvas>
+      </section>
+
+      <section id="settingsPanel" class="settings-panel" hidden>
+        <header class="panel-header">
+          <div>
+            <h1>Dot</h1>
+            <p id="settingsStatus" class="status-text">Ready</p>
+          </div>
+        </header>
+
+        <div class="field-grid">
+          <label class="wide-field">
+            <span>Name</span>
+            <input id="petNameInput" type="text" maxlength="18" autocomplete="off">
+          </label>
+
+          <label>
+            <span>Fur</span>
+            <input id="catColorInput" type="color">
+          </label>
+
+          <label>
+            <span>Pattern</span>
+            <input id="patternColorInput" type="color">
+          </label>
+
+          <label>
+            <span>Accent</span>
+            <input id="accentColorInput" type="color">
+          </label>
+        </div>
+
+        <div class="option-group">
+          <label class="switch">
+            <input id="keyboardWatchInput" type="checkbox">
+            <span>Keyboard watch</span>
+          </label>
+          <label class="switch">
+            <input id="hideInFullscreenInput" type="checkbox">
+            <span>Hide in full screen</span>
+          </label>
+          <label class="switch">
+            <input id="openAtLoginInput" type="checkbox">
+            <span>Open at login</span>
+          </label>
+        </div>
+
+        <div class="control-bar">
+          <button id="showPetButton" class="text-button">Show</button>
+          <button id="hidePetButton" class="text-button">Minimize</button>
+          <button id="quitButton" class="text-button danger">Quit</button>
+        </div>
+
+        <div class="control-bar">
+          <button id="testTypingButton" class="text-button">Tap paws</button>
+          <button id="stretchNowButton" class="text-button">Stretch</button>
+        </div>
+
+        <div class="timer-grid">
+          <label>
+            <span>Stretch min</span>
+            <input id="stretchMinutesInput" type="number" min="1" max="240" step="1">
+          </label>
+          <label>
+            <span>Reminder min</span>
+            <input id="reminderMinutesInput" type="number" min="1" max="240" step="1">
+          </label>
+        </div>
+
+        <label class="full-row">
+          <span>Reminder</span>
+          <input id="reminderMessageInput" type="text" maxlength="44" autocomplete="off">
+        </label>
+        <button id="scheduleReminderButton" class="text-button full-button">Schedule Reminder</button>
+
+        <div class="pomodoro">
+          <div class="timer-grid">
+            <label>
+              <span>Focus</span>
+              <input id="focusMinutesInput" type="number" min="1" max="120" step="1">
+            </label>
+            <label>
+              <span>Break</span>
+              <input id="breakMinutesInput" type="number" min="1" max="60" step="1">
+            </label>
+          </div>
+
+          <div class="control-bar">
+            <button id="pomodoroStartButton" class="text-button">Start</button>
+            <button id="pomodoroPauseButton" class="text-button">Pause</button>
+            <button id="pomodoroResetButton" class="text-button">Reset</button>
+          </div>
+        </div>
+
+        <label class="switch">
+          <input id="fixedMessageEnabledInput" type="checkbox">
+          <span>Fixed note</span>
+        </label>
+        <input id="fixedMessageInput" class="full-input" type="text" maxlength="44" autocomplete="off">
+
+        <footer class="panel-footer">
+          <button id="saveButton" class="primary-button">Save</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./pet.js"></script>
+  </body>
+</html>
