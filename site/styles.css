@@ -94,6 +94,14 @@ h2 {
   margin-top: 32px;
 }
 
+.availability {
+  max-width: 520px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .primary,
 .secondary {
   display: inline-flex;
