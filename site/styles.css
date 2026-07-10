@@ -303,7 +303,8 @@ h2 {
 }
 
 .feature p,
-.install li {
+.install li,
+.notice p {
   color: var(--muted);
   line-height: 1.6;
 }
@@ -316,6 +317,38 @@ h2 {
 
 ol {
   padding-left: 22px;
+}
+
+.notice {
+  max-width: 860px;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.notice h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.notice p {
+  margin: 0 0 12px;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+code {
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 @media (max-width: 820px) {

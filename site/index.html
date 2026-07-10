@@ -24,10 +24,10 @@
           <h1>Dot</h1>
           <p class="lede">A tiny pixel cat that lives on your Mac, watches your cursor, reminds you to stretch, and keeps your focus sessions company.</p>
           <div class="actions">
-            <a class="primary" href="https://github.com/Anshumaan657/Dot/releases/latest/download/Dot-0.1.0-arm64.dmg">Download for macOS</a>
+            <a class="primary" href="https://github.com/Anshumaan657/Dot/releases/latest/download/Dot-0.1.0-arm64.dmg">Download for macOS Apple Silicon</a>
             <a class="secondary" href="https://github.com/Anshumaan657/Dot">View source</a>
           </div>
-          <p class="availability">Direct `.dmg` download for Apple Silicon Macs. Windows support is planned.</p>
+          <p class="availability">Unsigned open-source build for Apple Silicon Macs. macOS may block first launch. Windows support is planned.</p>
         </div>
 
         <div class="preview" aria-label="Dot pixel cat preview">
@@ -68,10 +68,32 @@
       <section id="install" class="install">
         <h2>Install</h2>
         <ol>
-          <li>Click `Download for macOS` to download the `.dmg` directly.</li>
+          <li>Click `Download for macOS Apple Silicon` to download the `.dmg` directly.</li>
           <li>Open the `.dmg` and drag `Dot.app` to Applications.</li>
           <li>Launch Dot, then click the menu bar icon to open settings.</li>
         </ol>
+
+        <div class="notice">
+          <h3>If macOS says Dot is damaged</h3>
+          <p>Dot is an unsigned open-source build. If macOS blocks it after download, run this command after moving Dot to Applications:</p>
+          <pre><code>xattr -dr com.apple.quarantine /Applications/Dot.app
+open /Applications/Dot.app</code></pre>
+        </div>
+
+        <div class="notice">
+          <h3>Verify the download</h3>
+          <p>SHA256 for `Dot-0.1.0-arm64.dmg`:</p>
+          <pre><code>f98af460451119f23b61b467c3476230b170e3c323f82647354caa50dad2cbda</code></pre>
+        </div>
+
+        <div class="notice">
+          <h3>Build from source</h3>
+          <p>If you do not want to run an unsigned download, build Dot locally from the source code:</p>
+          <pre><code>git clone https://github.com/Anshumaan657/Dot.git
+cd Dot
+npm install
+npm start</code></pre>
+        </div>
       </section>
     </main>
   </body>

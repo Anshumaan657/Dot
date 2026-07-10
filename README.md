@@ -6,17 +6,41 @@ Dot is a tiny open-source desktop pixel cat for macOS. It opens a transparent al
 
 ## Download
 
-For normal users, download the latest macOS release from GitHub Releases:
+Download the latest Apple Silicon macOS build:
 
 ```text
-https://github.com/Anshumaan657/Dot/releases/latest
+https://github.com/Anshumaan657/Dot/releases/latest/download/Dot-0.1.0-arm64.dmg
 ```
 
 Download the `.dmg`, open it, drag `Dot.app` into Applications, then launch Dot.
 
-## Run From Source
+> Dot is currently an unsigned open-source build. macOS may block first launch because the app is not Apple Developer ID signed or notarized.
+
+### If macOS Says Dot Is Damaged
+
+After moving Dot to Applications, run:
 
 ```bash
+xattr -dr com.apple.quarantine /Applications/Dot.app
+open /Applications/Dot.app
+```
+
+This removes the download quarantine flag from your local copy of Dot.
+
+### Verify The Download
+
+SHA256 for `Dot-0.1.0-arm64.dmg`:
+
+```text
+f98af460451119f23b61b467c3476230b170e3c323f82647354caa50dad2cbda
+```
+
+## Run From Source
+
+If you do not trust the unsigned download, build Dot locally from source:
+
+```bash
+git clone https://github.com/Anshumaan657/Dot.git
 cd Dot
 npm install
 npm start
@@ -38,7 +62,7 @@ npm run dist
 
 The generated `.dmg` and `.zip` files appear in `dist/`.
 
-> Public release note: unsigned macOS apps may show a Gatekeeper warning. For the smoothest public install, sign and notarize the app with an Apple Developer ID before publishing releases.
+> Public release note: unsigned macOS apps may show a Gatekeeper warning or a misleading damaged-app message. For the smoothest public install, sign and notarize the app with an Apple Developer ID before publishing releases.
 
 ## Settings
 
